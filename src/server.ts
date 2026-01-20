@@ -4,6 +4,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 
 import sensorRouter from "./routes/sensorRoutes.js";
+import { appDataSource } from "./database/dataSource.js";
 
 dotenv.config();
 
@@ -16,6 +17,15 @@ app.use(express.json());
 
 app.use('/api', sensorRouter);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+// Tentando se conectar com o banco de dados
+appDataSource.initialize()
+    .then(() => {
+        console.log("Conectad ao banco")
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
