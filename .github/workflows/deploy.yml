@@ -13,6 +13,10 @@ jobs:
       - name: 📥 Checkout do código
         uses: actions/checkout@v4
 
+      - name: 🔄 Restart Docker
+        run: |
+          sudo /usr/local/bin/docker-restart.sh
+
       - name: 🔐 Login no GitHub Container Registry
         run: |
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
