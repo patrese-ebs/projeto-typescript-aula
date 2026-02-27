@@ -1,4 +1,6 @@
+# Triggering push to test Docker installation
 name: CI/CD - INDT
+
 
 on:
   push:
