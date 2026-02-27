@@ -40,6 +40,8 @@ jobs:
                 PORT=6060
                 JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}
                 JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}
+                JWT_ACCESS_EXPIRATION=1h
+                JWT_REFRESH_EXPIRATION=7d
                 EOF
             
             - name: Subir Compose
