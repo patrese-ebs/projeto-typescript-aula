@@ -3,5 +3,5 @@
 /logs
 
 /dist
-/docker-compose.yaml
+
 /.dockerignore
