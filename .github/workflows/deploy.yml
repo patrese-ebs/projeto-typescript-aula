@@ -51,4 +51,3 @@ jobs:
         run: |
               sleep 10
               docker compose ps
-
