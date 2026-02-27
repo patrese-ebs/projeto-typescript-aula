@@ -1,4 +1,4 @@
-# Deploy attempt at 2026-02-26 20:51
+# Deploy attempt at 2026-02-26 20:54
 name: CI/CD - INDT 
 
 on:
@@ -7,7 +7,7 @@ on:
             - main
 
 jobs:
-    build-and-deply:
+    build-and-deploy:
         runs-on: self-hosted
         steps:
             - name: Checkout do Código
